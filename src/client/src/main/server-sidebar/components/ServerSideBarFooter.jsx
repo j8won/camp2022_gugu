@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { IoMdSettings } from 'react-icons/io';
 import { useSetRecoilState } from 'recoil';
-import privatePageTypeState from '../../../recoil/common/privatePageType';
+import privatePageTypeState from '../../../recoil/common/privatePageTypeState';
 import settingTypeState from '../../../recoil/setting/common/settingTypeState';
 import PRIVATE_PAGE_TYPES from '../../../common/constant/PRIVATE_PAGE_TYPES';
 import SETTING_TYPES from '../../../setting/constant/SETTING_TYPES';
@@ -65,7 +65,7 @@ const SettingBtn = styled.div`
     color: ${(props) => props.theme.color.primaryText};
   }
 `;
-function ServerFooter() {
+function ServerSideBarFooter() {
   const setPrivatePageType = useSetRecoilState(privatePageTypeState);
   const setSettingType = useSetRecoilState(settingTypeState);
 
@@ -95,4 +95,4 @@ function ServerFooter() {
   );
 }
 
-export default React.memo(ServerFooter);
+export default React.memo(ServerSideBarFooter);

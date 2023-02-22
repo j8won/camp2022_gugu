@@ -32,6 +32,7 @@ const DefaultColor = styled.div`
 
   box-sizing: border-box;
   border-radius: 3px;
+  cursor: pointer;
 `;
 
 const CustomColor = styled.div`
@@ -49,6 +50,7 @@ const CustomColor = styled.div`
 
   font-size: 16px;
   color: ${(props) => props.theme.color.primaryText};
+  cursor: pointer;
 `;
 
 const CustomColorModal = styled.div`
@@ -96,6 +98,7 @@ const ColorButtonRow = styled.div`
 
     border: ${(props) => props.theme.border.primary};
     border-radius: 3px;
+    cursor: pointer;
   }
 `;
 

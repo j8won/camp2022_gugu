@@ -4,7 +4,7 @@ import { IoSettingsSharp } from 'react-icons/io5';
 import { PropTypes } from 'prop-types';
 
 import HeaderModalButton from './HeaderModalButton';
-import privatePageTypeState from '../../../recoil/common/privatePageType';
+import privatePageTypeState from '../../../recoil/common/privatePageTypeState';
 import PRIVATE_PAGE_TYPES from '../../../common/constant/PRIVATE_PAGE_TYPES';
 import settingTypeState from '../../../recoil/setting/common/settingTypeState';
 import SETTING_TYPES from '../../../setting/constant/SETTING_TYPES';

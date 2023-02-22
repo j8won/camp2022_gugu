@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import styled from 'styled-components';
 import { PropTypes } from 'prop-types';
 import { IoMdRadioButtonOff, IoMdRadioButtonOn } from 'react-icons/io';
@@ -163,9 +163,9 @@ function CreateChannelModal({ setIsModalOpen }) {
         <div
           className="cancel button"
           role="presentation"
-          onClick={() => {
+          onClick={useCallback(() => {
             setIsModalOpen(false);
-          }}
+          }, [setIsModalOpen])}
         >
           취소
         </div>
@@ -181,4 +181,4 @@ CreateChannelModal.propTypes = {
   setIsModalOpen: PropTypes.func.isRequired,
 };
 
-export default CreateChannelModal;
+export default React.memo(CreateChannelModal);

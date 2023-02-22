@@ -52,4 +52,4 @@ function InviteModal() {
   );
 }
 
-export default InviteModal;
+export default React.memo(InviteModal);

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import styled from 'styled-components';
 import { PropTypes } from 'prop-types';
 
@@ -65,9 +65,9 @@ function CreateCategoryModal({ setIsModalOpen }) {
         <div
           className="cancel button"
           role="presentation"
-          onClick={() => {
+          onClick={useCallback(() => {
             setIsModalOpen(false);
-          }}
+          }, [setIsModalOpen])}
         >
           취소
         </div>
@@ -83,4 +83,4 @@ CreateCategoryModal.propTypes = {
   setIsModalOpen: PropTypes.func.isRequired,
 };
 
-export default CreateCategoryModal;
+export default React.memo(CreateCategoryModal);

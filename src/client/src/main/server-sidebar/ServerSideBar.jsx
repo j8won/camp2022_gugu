@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import ServerSideBarHeader from './components/ServerSideBarHeader';
 import ServerSideBarContent from './components/ServerSideBarContent';
-import ServerFooter from './components/ServerFooter';
+import ServerFooter from './components/ServerSideBarFooter';
 
 const Container = styled.div`
   display: grid;
@@ -21,4 +21,4 @@ function ServerSideBar() {
   );
 }
 
-export default ServerSideBar;
+export default React.memo(ServerSideBar);

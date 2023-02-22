@@ -29,4 +29,4 @@ function HeaderInviteBtn() {
   );
 }
 
-export default HeaderInviteBtn;
+export default React.memo(HeaderInviteBtn);

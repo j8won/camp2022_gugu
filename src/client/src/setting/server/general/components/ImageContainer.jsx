@@ -199,4 +199,4 @@ function ImageContainer() {
   );
 }
 
-export default ImageContainer;
+export default React.memo(ImageContainer);

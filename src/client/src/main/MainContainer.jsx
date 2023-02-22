@@ -22,6 +22,7 @@ const MainContentContainer = styled.div`
 
 function MainContainer() {
   const mainContent = useRecoilValue(mainMainContentState);
+
   return (
     <Box>
       <UserSideBar />

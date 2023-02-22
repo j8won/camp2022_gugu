@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import { useRecoilValue } from 'recoil';
+
 import Label from '../../../../../layout/Label';
+import selectedRoleState from '../../../../../recoil/setting/server/selectedRoleState';
 
 const NameBox = styled.div`
   width: 100%;
@@ -22,12 +25,18 @@ const RoleNameInput = styled.input`
 `;
 
 function DisplayName() {
+  const selectedRole = useRecoilValue(selectedRoleState);
+  const [name, setName] = useState('');
+
+  useEffect(() => {
+    setName(selectedRole.name);
+  }, [selectedRole]);
   return (
     <NameBox>
       <Label>
         역할 이름 <span>*</span>
       </Label>
-      <RoleNameInput />
+      <RoleNameInput value={name} onChange={(e) => setName(e.target.value)} />
     </NameBox>
   );
 }

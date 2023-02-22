@@ -32,4 +32,4 @@ function HeaderChannelBtn() {
   );
 }
 
-export default HeaderChannelBtn;
+export default React.memo(HeaderChannelBtn);

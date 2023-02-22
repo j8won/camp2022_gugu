@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import { useRecoilValue } from 'recoil';
 
 import Content from '../../common/components/Content';
 import Heading3 from '../../../layout/Heading3';
 import Label from '../../../layout/Label';
+import selectedChannelState from '../../../recoil/common/selectedChannelState';
 
 const ChannelName = styled.input`
   width: calc(100% - 20px);
@@ -41,11 +43,23 @@ const ChannelTopic = styled.textarea`
 `;
 
 function ChannelGeneralContainer() {
+  const selectedChannel = useRecoilValue(selectedChannelState);
+  const [name, setName] = useState('');
+
+  useEffect(() => {
+    setName(selectedChannel);
+  }, [selectedChannel]);
+
   return (
     <Content>
       <Heading3>일반</Heading3>
       <Label>채널 이름</Label>
-      <ChannelName maxlength="100" type="text" />
+      <ChannelName
+        maxlength="100"
+        type="text"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      />
       <Divider />
       <Label>채널 주제</Label>
       <ChannelTopic

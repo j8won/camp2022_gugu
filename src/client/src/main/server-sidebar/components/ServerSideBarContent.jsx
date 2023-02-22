@@ -31,7 +31,7 @@ function ServerSideBarContent() {
         },
         {
           type: 'voice',
-          id: '21',
+          id: '22',
           name: 'GuGu 놀이터',
         },
       ],
@@ -48,8 +48,6 @@ function ServerSideBarContent() {
       ],
     },
   ];
-
-  console.log(categoryInfo);
 
   return (
     <Container>

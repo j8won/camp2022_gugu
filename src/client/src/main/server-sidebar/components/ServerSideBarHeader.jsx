@@ -92,4 +92,4 @@ function ServerSideBarHeader() {
   );
 }
 
-export default ServerSideBarHeader;
+export default React.memo(ServerSideBarHeader);

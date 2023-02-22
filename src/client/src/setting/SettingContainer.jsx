@@ -25,6 +25,8 @@ const ContentContainer = styled.div`
 
   display: grid;
   grid-template-columns: auto 80px;
+
+  overflow-y: scroll;
 `;
 
 const sidebarSelector = (type) => {

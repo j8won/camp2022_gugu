@@ -72,8 +72,10 @@ const Role = styled.div`
   font-size: 16px;
   border-radius: 3px;
 
+  cursor: pointer;
+
   &:hover {
-    background-color: ${(props) => props.theme.color.inputHoverBg};
+    background-color: ${(props) => props.theme.color.hoverBg};
   }
 `;
 
@@ -85,6 +87,7 @@ const RoleIcon = styled(AiFillCheckCircle)`
 function NavBar() {
   const roleModalRef = useRef();
   const [isRoleModalOpen, setIsRoleModalOpen] = useState(false);
+  const [shownRole, setShownRole] = useState('@everyone');
 
   const roleArray = [
     { name: '@everyone', color: 'yellow' },
@@ -102,7 +105,7 @@ function NavBar() {
       <RightBox>
         <RoleBox>
           <span>역할 표시:</span>
-          <SelectedRole>@everyone</SelectedRole>
+          <SelectedRole>{shownRole}</SelectedRole>
           <RoleSelectOpenBtn
             onClick={() => {
               setIsRoleModalOpen(true);
@@ -117,7 +120,10 @@ function NavBar() {
               />
               <RoleList>
                 {roleArray.map((role) => (
-                  <Role style={{ color: role.color }}>
+                  <Role
+                    style={{ color: role.color }}
+                    onClick={() => setShownRole(role.name)}
+                  >
                     <p>{role.name}</p>
                     <RoleIcon value="selected" />
                   </Role>

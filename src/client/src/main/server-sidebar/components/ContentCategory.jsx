@@ -47,7 +47,7 @@ const Container = styled.div`
 `;
 
 function ContentCategory({ name, channels }) {
-  const [isDetailClicked, setIsDetailClicked] = useState(false);
+  const [isDetailClicked, setIsDetailClicked] = useState(true);
   const [isCreateClicked, setIsCreateClicked] = useState(false);
 
   const handleCategoryClick = () => {
@@ -102,7 +102,7 @@ function ContentCategory({ name, channels }) {
 
 ContentCategory.propTypes = {
   name: PropTypes.string.isRequired,
-  channels: PropTypes.arrayOf, //eslint-disable-line
+  channels: PropTypes.array, //eslint-disable-line
 };
 
 export default React.memo(ContentCategory);

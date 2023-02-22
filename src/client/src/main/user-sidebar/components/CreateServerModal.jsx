@@ -188,4 +188,4 @@ CreateServerModal.defaultProps = {
   isOpen: true,
 };
 
-export default CreateServerModal;
+export default React.memo(CreateServerModal);

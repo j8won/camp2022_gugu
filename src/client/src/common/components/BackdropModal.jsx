@@ -34,7 +34,7 @@ BackdropModal.propTypes = {
   open: PropTypes.bool,
   setOpen: PropTypes.func,
   children: PropTypes.element,
-  sx: PropTypes.objectOf,
+  sx: PropTypes.object, //eslint-disable-line
 };
 
 BackdropModal.defaultProps = {

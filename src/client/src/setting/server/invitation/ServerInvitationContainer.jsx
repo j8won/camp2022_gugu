@@ -41,7 +41,7 @@ function ServerInvitationContainer() {
     },
     {
       inviterName: '김정인',
-      inviterCode: '#2222',
+      inviterCode: '#1113',
       invitationCode: 'df2ds1y',
       numInvitationUses: '0',
       invitationEndTime: new Date('2023-04-01'),

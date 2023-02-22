@@ -9,11 +9,12 @@ import { IoMdSettings } from 'react-icons/io';
 
 import BackdropModal from '../../../common/components/BackdropModal';
 import InviteModal from './InviteModal';
-import privatePageType from '../../../recoil/common/privatePageType';
+import privatePageType from '../../../recoil/common/privatePageTypeState';
 import settingTypeState from '../../../recoil/setting/common/settingTypeState';
 import PRIVATE_PAGE_TYPES from '../../../common/constant/PRIVATE_PAGE_TYPES';
 import SETTING_TYPES from '../../../setting/constant/SETTING_TYPES';
 import mainMainContentState from '../../../recoil/main/common/mainMainContentState';
+import selectedChannelState from '../../../recoil/common/selectedChannelState';
 
 const Container = styled.div`
   height: 34px;
@@ -82,6 +83,7 @@ function ContentChannel({ type, name }) {
   const [isInviteModalOpen, setIsInviteModalOpen] = useState(false);
   const setPrivatePageType = useSetRecoilState(privatePageType);
   const setSettingsType = useSetRecoilState(settingTypeState);
+  const setSelectedChannel = useSetRecoilState(selectedChannelState);
   const setMainMainContent = useSetRecoilState(mainMainContentState);
   return (
     <>
@@ -112,6 +114,7 @@ function ContentChannel({ type, name }) {
             onClick={() => {
               setPrivatePageType(PRIVATE_PAGE_TYPES.SETTING);
               setSettingsType(SETTING_TYPES.CHANNEL);
+              setSelectedChannel(name);
             }}
           >
             <IoMdSettings />

@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
+import { useSetRecoilState } from 'recoil';
+
 import ServerIcon from './components/ServerIcon';
 import CreateServerBtn from './components/CreateServerBtn';
+import selectedServerState from '../../recoil/common/selectedServerState';
 
 const Container = styled.div`
   padding-top: 12px;
@@ -23,6 +26,12 @@ function UserSideBar() {
       id: '2',
     },
   ];
+
+  const setSelectedServer = useSetRecoilState(selectedServerState);
+
+  useEffect(() => {
+    setSelectedServer(serverList[0].name);
+  }, []);
 
   return (
     <Container>

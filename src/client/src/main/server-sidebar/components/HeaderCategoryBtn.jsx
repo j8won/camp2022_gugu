@@ -32,4 +32,4 @@ function HeaderCategoryBtn() {
   );
 }
 
-export default HeaderCategoryBtn;
+export default React.memo(HeaderCategoryBtn);
